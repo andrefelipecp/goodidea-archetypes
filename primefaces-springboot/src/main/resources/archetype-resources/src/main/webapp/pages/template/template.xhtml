@@ -1,0 +1,42 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+
+	<h:head>
+		<f:facet name="first">
+			<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+			<title><h:outputText value="${symbol_pound}{msg.titleMessage}" /></title>
+
+			<link type="text/css" rel="stylesheet" href="${symbol_pound}{request.contextPath}/css/style.css" />
+			<h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+		</f:facet>
+
+		<script type="text/javascript" src="${symbol_pound}{request.contextPath}/javascript/main.js" />
+
+		<f:facet name="last">
+			<script type="text/javascript" src="${symbol_pound}{request.contextPath}/javascript/util.js" />
+			<script type="text/javascript" src="${symbol_pound}{request.contextPath}/javascript/fun.js" />
+		</f:facet>
+	</h:head>
+
+	<h:body onmouseover="window.focus()">
+		<p:growl id="growl" showDetail="true" sticky="true" />
+		<p:menu style="width: 90%;" >
+            <p:submenu label="Menu">
+                <p:menuitem id="homeMenuItem" value="Home" url="/index.xhtml" />
+                <p:menuitem id="usuarioMenuItem" value="Usuario" url="/pages/usuario/usuario.xhtml" />
+            </p:submenu>
+        </p:menu>
+		
+		<ui:insert name="content"></ui:insert>
+
+	</h:body>
+</f:view>
+</html>

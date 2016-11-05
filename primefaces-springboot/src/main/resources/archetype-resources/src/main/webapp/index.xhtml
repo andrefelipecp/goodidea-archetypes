@@ -1,0 +1,24 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<ui:composition template="pages/template/template.xhtml"   
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+
+        <p:panel header="${symbol_pound}{msg.titleMessage}">
+            <h:outputText value="${symbol_pound}{msg.welcomeMessage}" /><p />
+            <p:dataList value="${symbol_pound}{indexController.usuarios}" var="usuario" type="ordered">
+		        <f:facet name="header">
+		            Usuários Adicionados
+		        </f:facet>
+		        Usuario: ${symbol_pound}{usuario.nome}, Login: ${symbol_pound}{usuario.login}
+		    </p:dataList>
+        </p:panel>
+    
+	</ui:define>
+</ui:composition>

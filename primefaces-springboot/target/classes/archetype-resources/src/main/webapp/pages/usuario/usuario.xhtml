@@ -1,0 +1,25 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<ui:composition template="/pages/template/template.xhtml"   
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <h:form>
+        	<h:outputLabel>Nome</h:outputLabel>
+        	<p:inputText value="${symbol_pound}{usuarioController.usuario.nome}" label="Nome"> </p:inputText>
+        	
+        	<h:outputLabel>Login</h:outputLabel>
+        	<p:inputText value="${symbol_pound}{usuarioController.usuario.login}" label="Login"> </p:inputText>
+        	
+        	<h:outputLabel>Senha</h:outputLabel>
+        	<p:inputText value="${symbol_pound}{usuarioController.usuario.password}" label="Senha"> </p:inputText>
+        	
+        	<h:commandButton action="${symbol_pound}{usuarioController.cadastrarNovoUsuario()}" value="Salvar"></h:commandButton>
+        </h:form>
+    </ui:define>
+</ui:composition>
